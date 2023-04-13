@@ -27,18 +27,18 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] Rigidbody playerRb;
 
     [Header("Ground Check")]
-    public float playerHeight;
+    [SerializeField] float playerHeight;
     [SerializeField] bool isGrounded;
 
     [Header("Movement Properties")]
-    public float movementSpeed;
-    public float groundDrag;
-    [SerializeField] Vector3 moveDirection;
+    [SerializeField] float movementSpeed;
+    [SerializeField] float groundDrag;
+    Vector3 moveDirection;
 
     [Header("Jump Properties")]
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
+    [SerializeField] float jumpForce;
+    [SerializeField] float jumpCooldown;
+    [SerializeField] float airMultiplier;
     bool readyToJump;
 
 
@@ -68,7 +68,7 @@ public class PlayerMgr : MonoBehaviour
     }
 
     // Update for physics calculations
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         // Rigidbody movement is physics-based, so FixedUpdate is necessary
         MovePlayer();
@@ -91,7 +91,7 @@ public class PlayerMgr : MonoBehaviour
     }
 
     // Helper method that caps the player's speed
-    public void SpeedControl()
+    void SpeedControl()
     {
         Vector3 flatVel = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
 

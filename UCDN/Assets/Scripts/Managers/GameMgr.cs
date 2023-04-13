@@ -22,7 +22,7 @@ public class GameMgr : MonoBehaviour
 
 
     /*----- PROPERTIES -----*/
-    Vector3 gravity = new Vector3(0f, -9.81f * 2, 0f);
+    [SerializeField] Vector3 gravity = new Vector3(0f, -9.81f * 2, 0f);
 
 
     /*----- METHODS -----*/

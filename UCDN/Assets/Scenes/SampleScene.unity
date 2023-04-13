@@ -672,9 +672,11 @@ MonoBehaviour:
   playerHeight: 2
   isGrounded: 0
   movementSpeed: 7
-  airMultiplier: 0.4
   groundDrag: 5
   moveDirection: {x: 0, y: 0, z: 0}
+  jumpForce: 10
+  jumpCooldown: 0.25
+  airMultiplier: 0.4
 --- !u!1 &1873412333
 GameObject:
   m_ObjectHideFlags: 0

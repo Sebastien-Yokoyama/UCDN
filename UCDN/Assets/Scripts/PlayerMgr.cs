@@ -30,16 +30,23 @@ public class PlayerMgr : MonoBehaviour
     public float playerHeight;
     [SerializeField] bool isGrounded;
 
-    [Header("Movement")]
+    [Header("Movement Properties")]
     public float movementSpeed;
-    public float airMultiplier;
     public float groundDrag;
     [SerializeField] Vector3 moveDirection;
+
+    [Header("Jump Properties")]
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRb.freezeRotation = true;
+
+        readyToJump = true;
     }
 
     // Update is called once per frame
@@ -86,6 +93,33 @@ public class PlayerMgr : MonoBehaviour
         {
             Vector3 limitedVel = flatVel.normalized * movementSpeed;
             playerRb.velocity = new Vector3(limitedVel.x, playerRb.velocity.y, limitedVel.z);
+        }
+    }
+
+    void Jump()
+    {
+        // Prevent double-jumping
+        readyToJump = false;
+
+        // Reset y-velocity
+        playerRb.velocity = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
+
+        playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+
+    void ResetJump()
+    {
+        readyToJump = true;
+    }
+
+    public void DoJump()
+    {
+        // Jump if grounded and able to
+        if (readyToJump && isGrounded)
+        {
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 }

@@ -68,5 +68,8 @@ public class InputMgr : MonoBehaviour
         // Read WASD for movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        // Read for jump
+        if (Input.GetKeyDown(KeyCode.Space)){ PlayerMgr.inst.DoJump(); }
     }
 }

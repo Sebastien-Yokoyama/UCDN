@@ -41,6 +41,8 @@ public class PlayerMgr : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+
+    /*----- METHODS -----*/
     // Start is called before the first frame update
     void Start()
     {

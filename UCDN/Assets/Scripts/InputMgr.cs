@@ -46,6 +46,7 @@ public class InputMgr : MonoBehaviour
         ReadKeyboardInput();
     }
 
+    // Reads the user's mouse input
     void ReadMouseInput()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;    // Horizontal
@@ -60,6 +61,7 @@ public class InputMgr : MonoBehaviour
         PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
     }
 
+    // Reads the user's keyboard input
     void ReadKeyboardInput()
     {
         // Quit Game if ESC is pressed

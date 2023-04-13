@@ -21,9 +21,12 @@ public class InputMgr : MonoBehaviour
 
 
     /*----- PROPERTIES -----*/
-    [Header("Mouse Settings")]
+    [Header("Mouse Properties")]
     public float mouseSensitivity = 100f;
     float xRotation, yRotation;
+
+    [Header("Keyboard Properties")]
+    public float horizontalInput, verticalInput;
 
 
     /*----- METHODS -----*/
@@ -37,8 +40,16 @@ public class InputMgr : MonoBehaviour
     void Update()
     {
         // Mouse Input
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;    // Horizontal
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;    // Vertical
+        ReadMouseInput();
+
+        // Keyboard Input
+        ReadKeyboardInput();
+    }
+
+    void ReadMouseInput()
+    {
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;    // Horizontal
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;    // Vertical
 
         yRotation += mouseX;
 
@@ -47,5 +58,15 @@ public class InputMgr : MonoBehaviour
 
         CameraMgr.inst.playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
+    }
+
+    void ReadKeyboardInput()
+    {
+        // Quit Game if ESC is pressed
+        if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
+
+        // Read WASD for movement
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
     }
 }

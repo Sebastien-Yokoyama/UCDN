@@ -44,8 +44,10 @@ public class PlayerMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Prevent the rigidbody from falling over sideways
         playerRb.freezeRotation = true;
 
+        // Initialize ability to jump
         readyToJump = true;
     }
 
@@ -63,12 +65,14 @@ public class PlayerMgr : MonoBehaviour
         else { playerRb.drag = 0f; }
     }
 
+    // Update for physics calculations
     private void FixedUpdate()
     {
         // Rigidbody movement is physics-based, so FixedUpdate is necessary
         MovePlayer();
     }
 
+    // Moves the player by applying forces to the player RigidBody
     public void MovePlayer()
     {
         // Calculate movement direction
@@ -84,6 +88,7 @@ public class PlayerMgr : MonoBehaviour
         }
     }
 
+    // Helper method that caps the player's speed
     public void SpeedControl()
     {
         Vector3 flatVel = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
@@ -96,6 +101,7 @@ public class PlayerMgr : MonoBehaviour
         }
     }
 
+    // Allows the player to jump by applying a vertical force to the player RigidBody
     void Jump()
     {
         // Prevent double-jumping
@@ -107,11 +113,15 @@ public class PlayerMgr : MonoBehaviour
         playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
+    // Helper method that resets the status for the player's ability to jump
     void ResetJump()
     {
         readyToJump = true;
     }
 
+    /* Method that attempts to jump.
+     If the player is grounded and is ready to jump, the player will jump, using the Jump() method.
+    If the player is neither grounded nor ready to jump, nothing will happen. */
     public void DoJump()
     {
         // Jump if grounded and able to

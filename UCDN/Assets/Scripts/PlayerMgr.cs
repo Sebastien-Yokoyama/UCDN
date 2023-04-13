@@ -21,8 +21,13 @@ public class PlayerMgr : MonoBehaviour
 
 
     /*----- PROPERTIES -----*/
+    [Header("Player Objects")]
     public GameObject playerObject;
+    [SerializeField] Rigidbody playerRb;
 
+    [Header("Ground Check")]
+    public float playerHeight;
+    [SerializeField] bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,7 @@ public class PlayerMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Check if the player is grounded
+        isGrounded = Physics.Raycast(playerObject.transform.position, Vector3.down, playerHeight * 0.5f + 0.1f);
     }
 }

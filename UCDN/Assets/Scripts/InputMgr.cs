@@ -26,6 +26,7 @@ public class InputMgr : MonoBehaviour
     float xRotation, yRotation;
 
 
+    /*----- METHODS -----*/
     // Start is called before the first frame update
     void Start()
     {

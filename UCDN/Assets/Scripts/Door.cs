@@ -12,9 +12,9 @@ public class Door : MonoBehaviour
     public GameObject LockedPanel = null;
     public GameObject UseKeyPanel = null;
 
-    public float maxOpening = -2.5f;
+    public float maxOpening = -3f;
     public float maxClosed = 2.5f;
-    public float movementSpeed = -1f;
+    public float movementSpeed = -5f;
 
     bool playerIsHere;
     bool open;

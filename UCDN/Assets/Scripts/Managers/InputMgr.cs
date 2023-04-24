@@ -105,5 +105,20 @@ public class InputMgr : MonoBehaviour
         {
             PlayerMgr.inst.gun.Reload();
         }
+
+        // Read Q for inventory
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // If cloesd
+            if (!UIMgr.inst.inventoryOpen)
+            {
+                UIMgr.inst.OpenInventory();
+            }
+            // If open
+            else
+            {
+                UIMgr.inst.CloseInventory();
+            }
+        }
     }
 }

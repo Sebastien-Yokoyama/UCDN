@@ -26,12 +26,18 @@ public class UIMgr : MonoBehaviour
     public TextMeshProUGUI keyCount;
     public TextMeshProUGUI ammo;
 
+    public GameObject inventoryPanel;
+    public bool inventoryOpen;
+
     /*----- METHDOS -----*/
     // Start is called before the first frame update
     void Start()
     {
         SetKeyCount();
         SetAmmo();
+
+        inventoryOpen = false;
+        inventoryPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,5 +55,17 @@ public class UIMgr : MonoBehaviour
     void SetAmmo()
     {
         ammo.text = PlayerMgr.inst.gun.bulletsLeft.ToString() + "/" + PlayerMgr.inst.gun.magazineSize;
+    }
+
+    public void OpenInventory()
+    {
+        inventoryOpen = true;
+        inventoryPanel.SetActive(true);
+    }
+
+    public void CloseInventory()
+    {
+        inventoryOpen = false;
+        inventoryPanel.SetActive(false);
     }
 }

@@ -24,23 +24,30 @@ public class UIMgr : MonoBehaviour
     /*----- PROPERTIES -----*/
     [Header("UI Elements")]
     public TextMeshProUGUI keyCount;
-
+    public TextMeshProUGUI ammo;
 
     /*----- METHDOS -----*/
     // Start is called before the first frame update
     void Start()
     {
         SetKeyCount();
+        SetAmmo();
     }
 
     // Update is called once per frame
     void Update()
     {
         SetKeyCount();
+        SetAmmo();
     }
 
     void SetKeyCount()
     {
         keyCount.text = "Keys: " + PlayerMgr.inst.keyCount.ToString();
+    }
+
+    void SetAmmo()
+    {
+        ammo.text = PlayerMgr.inst.gun.bulletsLeft.ToString() + "/" + PlayerMgr.inst.gun.magazineSize;
     }
 }

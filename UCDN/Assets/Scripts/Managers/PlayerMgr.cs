@@ -44,6 +44,9 @@ public class PlayerMgr : MonoBehaviour
     [Header("Gun")]
     public Gun gun;
 
+    [Header("Inventory")]
+    public int keyCount;
+
 
     /*----- METHODS -----*/
     // Start is called before the first frame update

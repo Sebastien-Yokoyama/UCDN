@@ -41,6 +41,9 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] float airMultiplier;
     bool readyToJump;
 
+    [Header("Gun")]
+    public Gun gun;
+
 
     /*----- METHODS -----*/
     // Start is called before the first frame update

@@ -33,7 +33,9 @@ public class InputMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Lock and Hide cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class InputMgr : MonoBehaviour
     {
         // Mouse Input
         ReadMouseInput();
+        ReadMouseClick();
 
         // Keyboard Input
         ReadKeyboardInput();
@@ -61,6 +64,29 @@ public class InputMgr : MonoBehaviour
         PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
     }
 
+    // Reads the user's mouse click input for shooting
+    void ReadMouseClick()
+    {
+        // Full auto
+        if (PlayerMgr.inst.gun.allowButtonHold)
+        {
+            PlayerMgr.inst.gun.shooting = Input.GetKey(KeyCode.Mouse0);
+        }
+        // Semi auto
+        else
+        {
+            PlayerMgr.inst.gun.shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        }
+
+
+        // Shoot
+        if(PlayerMgr.inst.gun.readyToShoot && PlayerMgr.inst.gun.shooting && !PlayerMgr.inst.gun.reloading && (PlayerMgr.inst.gun.bulletsLeft > 0))
+        {
+            PlayerMgr.inst.gun.bulletsShot = PlayerMgr.inst.gun.bulletsPerTap;
+            PlayerMgr.inst.gun.Shoot();
+        }
+    }
+
     // Reads the user's keyboard input
     void ReadKeyboardInput()
     {
@@ -73,5 +99,11 @@ public class InputMgr : MonoBehaviour
 
         // Read for jump
         if (Input.GetKeyDown(KeyCode.Space)){ PlayerMgr.inst.DoJump(); }
+
+        // Read R for gun reload
+        if(Input.GetKeyDown(KeyCode.R) && (PlayerMgr.inst.gun.bulletsLeft < PlayerMgr.inst.gun.magazineSize) && !PlayerMgr.inst.gun.reloading)
+        {
+            PlayerMgr.inst.gun.Reload();
+        }
     }
 }

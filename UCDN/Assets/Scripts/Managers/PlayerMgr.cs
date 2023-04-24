@@ -135,13 +135,5 @@ public class PlayerMgr : MonoBehaviour
         }
     }
 	
-	//Ausitn Jaro Key Pickup
-	/*private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("key1"))
-        {   
-            other.gameObject.SetActive(false);
-          
-        }
-	}	*/
+
 }

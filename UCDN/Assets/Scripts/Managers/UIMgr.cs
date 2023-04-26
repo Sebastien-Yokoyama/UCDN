@@ -34,7 +34,6 @@ public class UIMgr : MonoBehaviour
     void Start()
     {
         SetKeyCount();
-        SetAmmo();
 
         inventoryOpen = false;
         inventoryPanel.SetActive(false);
@@ -44,17 +43,11 @@ public class UIMgr : MonoBehaviour
     void Update()
     {
         SetKeyCount();
-        SetAmmo();
     }
 
     void SetKeyCount()
     {
         keyCount.text = "Keys: " + PlayerMgr.inst.keyCount.ToString();
-    }
-
-    void SetAmmo()
-    {
-        ammo.text = PlayerMgr.inst.gun.bulletsLeft.ToString() + "/" + PlayerMgr.inst.gun.magazineSize;
     }
 
     public void OpenInventory()

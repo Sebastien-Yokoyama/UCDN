@@ -41,9 +41,6 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] float airMultiplier;
     bool readyToJump;
 
-    [Header("Gun")]
-    public Gun gun;
-
     [Header("Inventory")]
     public int keyCount;
 

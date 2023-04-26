@@ -11,15 +11,23 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    // ENUMERATION for Key TYPES
+    public enum KeyType
+    {
+        Rust,    // 0
+        Test    // 1
+    }
+
     /*----- PROPERTIES -----*/
-    //[SerializeField] Rigidbody rb;
+    [Header("Key Properties")]
+    [SerializeField] KeyType keyType;   // Set value in inspector
+
 
     /*----- METHODS -----*/
     // Start is called before the first frame update
     void Start()
     {
-        // Get Rigidbody for collision
-        //rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -28,9 +36,10 @@ public class Key : MonoBehaviour
         
     }
 
-    // Check for collision with player
+    // When collision occurs
     private void OnCollisionEnter(Collision collision)
     {
+        // Check for player collision
         if(collision.gameObject.tag == "Player")
         {
             // Player collects key

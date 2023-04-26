@@ -45,7 +45,7 @@ public class UIMgr : MonoBehaviour
         SetKeyCount();
     }
 
-    void SetKeyCount()
+    public void SetKeyCount()
     {
         keyCount.text = "Keys: " + PlayerMgr.inst.keyCount.ToString();
     }

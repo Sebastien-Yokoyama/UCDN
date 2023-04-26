@@ -22,12 +22,16 @@ public class UIMgr : MonoBehaviour
 
 
     /*----- PROPERTIES -----*/
-    [Header("UI Elements")]
+    [Header("Key Count UI Elements")]
+    public GameObject keyCountPanel;
     public TextMeshProUGUI keyCount;
-    public TextMeshProUGUI ammo;
 
+    [Header("Inventory UI Elements")]
     public GameObject inventoryPanel;
+
     public bool inventoryOpen;
+
+    public TextMeshProUGUI rustKeyCount;
 
     /*----- METHDOS -----*/
     // Start is called before the first frame update
@@ -43,6 +47,8 @@ public class UIMgr : MonoBehaviour
     void Update()
     {
         SetKeyCount();
+
+        SetRustKeyCount();
     }
 
     public void SetKeyCount()
@@ -54,11 +60,20 @@ public class UIMgr : MonoBehaviour
     {
         inventoryOpen = true;
         inventoryPanel.SetActive(true);
+
+        keyCountPanel.gameObject.SetActive(false);
     }
 
     public void CloseInventory()
     {
         inventoryOpen = false;
         inventoryPanel.SetActive(false);
+
+        keyCountPanel.gameObject.SetActive(true);
+    }
+
+    void SetRustKeyCount()
+    {
+        rustKeyCount.text = "x " + PlayerMgr.inst.rustKeyCount.ToString();
     }
 }

@@ -86,7 +86,7 @@ public class InputMgr : MonoBehaviour
         // Read Q for inventory
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            // If cloesd
+            // If closed
             if (!UIMgr.inst.inventoryOpen)
             {
                 UIMgr.inst.OpenInventory();

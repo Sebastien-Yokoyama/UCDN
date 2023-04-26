@@ -44,9 +44,23 @@ public class Key : MonoBehaviour
         {
             // Player collects key
             PlayerMgr.inst.keyCount++;
+            AddKeyType(keyType);
 
             // Destroy this key
             Destroy(gameObject);
+        }
+    }
+
+    void AddKeyType(KeyType type)
+    {
+        switch(type)
+        {
+            case KeyType.Rust:
+                PlayerMgr.inst.rustKeyCount++;
+                break;
+            default:
+                PlayerMgr.inst.keyCount++;
+                break;
         }
     }
 }

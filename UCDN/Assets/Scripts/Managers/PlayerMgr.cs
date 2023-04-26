@@ -43,6 +43,7 @@ public class PlayerMgr : MonoBehaviour
 
     [Header("Inventory")]
     public int keyCount;
+    public int rustKeyCount;
 
 
     /*----- METHODS -----*/

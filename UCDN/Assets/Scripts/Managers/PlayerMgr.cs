@@ -41,6 +41,10 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] float airMultiplier;
     bool readyToJump;
 
+    [Header("Inventory")]
+    public int keyCount;
+    public int rustKeyCount;
+
 
     /*----- METHODS -----*/
     // Start is called before the first frame update

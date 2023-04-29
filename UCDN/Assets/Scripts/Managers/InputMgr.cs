@@ -33,7 +33,9 @@ public class InputMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Lock and Hide cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class InputMgr : MonoBehaviour
     {
         // Mouse Input
         ReadMouseInput();
+        ReadMouseClick();
 
         // Keyboard Input
         ReadKeyboardInput();
@@ -61,6 +64,12 @@ public class InputMgr : MonoBehaviour
         PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
     }
 
+    // Reads the user's mouse click input
+    void ReadMouseClick()
+    {
+
+    }
+
     // Reads the user's keyboard input
     void ReadKeyboardInput()
     {
@@ -73,5 +82,20 @@ public class InputMgr : MonoBehaviour
 
         // Read for jump
         if (Input.GetKeyDown(KeyCode.Space)){ PlayerMgr.inst.DoJump(); }
+
+        // Read Q for inventory
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // If closed
+            if (!UIMgr.inst.inventoryOpen)
+            {
+                UIMgr.inst.OpenInventory();
+            }
+            // If open
+            else
+            {
+                UIMgr.inst.CloseInventory();
+            }
+        }
     }
 }

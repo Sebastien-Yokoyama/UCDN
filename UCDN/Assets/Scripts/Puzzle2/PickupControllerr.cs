@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupController : MonoBehaviour
+public class PickupControllerr : MonoBehaviour
 {
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
@@ -53,7 +53,7 @@ public class PickupController : MonoBehaviour
             heldObjRB = pickObj.GetComponent<Rigidbody>();
             heldObjRB.useGravity = false;
             heldObjRB.drag = 10;
-            heldObjRB.constraints = RigidbodyConstraints.FreeseRotation;
+            heldObjRB.constraints = RigidbodyConstraints.FreezeRotation;
 
             heldObjRB.transform.parent = holdArea;
             heldObj = pickObj;

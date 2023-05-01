@@ -95,9 +95,9 @@ public class PuzzleRoom1 : MonoBehaviour
                 {
                     if (blue)
                     { 
-                      if (movingDoor.transform.position.y < 8)
+                      if (movingDoor.transform.position.y > -10)
                       {
-                        movingDoor.transform.Translate(0f, 5f * Time.deltaTime, 0f);
+                        movingDoor.transform.Translate(0f, -5f * Time.deltaTime, 0f);
                       }
                         
                     }

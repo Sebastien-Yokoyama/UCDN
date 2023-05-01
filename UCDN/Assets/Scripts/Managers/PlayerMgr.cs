@@ -25,6 +25,7 @@ public class PlayerMgr : MonoBehaviour
     [Header("Player Objects")]
     public GameObject playerObject;
     [SerializeField] Rigidbody playerRb;
+    public Transform orientation;
 
     [Header("Ground Check")]
     [SerializeField] float playerHeight;
@@ -82,7 +83,8 @@ public class PlayerMgr : MonoBehaviour
     public void MovePlayer()
     {
         // Calculate movement direction
-        moveDirection = playerObject.transform.forward * InputMgr.inst.verticalInput + playerObject.transform.right * InputMgr.inst.horizontalInput;
+        //moveDirection = playerObject.transform.forward * InputMgr.inst.verticalInput + playerObject.transform.right * InputMgr.inst.horizontalInput;
+        moveDirection = orientation.forward * InputMgr.inst.verticalInput + orientation.right * InputMgr.inst.horizontalInput;
 
         if(isGrounded)
         {

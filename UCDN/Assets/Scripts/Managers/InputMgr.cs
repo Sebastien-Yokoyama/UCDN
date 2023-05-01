@@ -60,8 +60,11 @@ public class InputMgr : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        CameraMgr.inst.playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
+        //CameraMgr.inst.playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        //PlayerMgr.inst.playerObject.transform.Rotate(Vector3.up * mouseX);
+
+        CameraMgr.inst.playerCam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        PlayerMgr.inst.orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     // Reads the user's mouse click input

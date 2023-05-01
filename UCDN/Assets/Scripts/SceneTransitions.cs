@@ -14,6 +14,10 @@ public class SceneTransitions : MonoBehaviour
     bool playerIsHere3;
     bool playerIsHere4;
     bool playerIsHere5;
+    bool playerIsHere6;
+    bool playerIsHere7;
+    bool playerIsHere8;
+    bool playerIsHere9;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,10 @@ public class SceneTransitions : MonoBehaviour
         playerIsHere3 = false;
         playerIsHere4 = false;
         playerIsHere5 = false;
+        playerIsHere6 = false;
+        playerIsHere7 = false;
+        playerIsHere8 = false;
+        playerIsHere9 = false;
 
         toPuzzleRoomPanel.SetActive(false);
     }
@@ -54,6 +62,22 @@ public class SceneTransitions : MonoBehaviour
         if (playerIsHere5 && Input.GetKeyDown(KeyCode.E))
         {
             LoadSceneByName("Puzzle 3");
+        }
+        if (playerIsHere6 && Input.GetKeyDown(KeyCode.E))
+        {
+            LoadSceneByName("mainToColony");
+        }
+        if (playerIsHere7 && Input.GetKeyDown(KeyCode.E))
+        {
+            LoadSceneByName("Destroyed colony");
+        }
+        if (playerIsHere8 && Input.GetKeyDown(KeyCode.E))
+        {
+            LoadSceneByName("Puzzle 4");
+        }
+        if (playerIsHere9 && Input.GetKeyDown(KeyCode.E))
+        {
+            LoadSceneByName("Execution room");
         }
 
 
@@ -98,6 +122,26 @@ public class SceneTransitions : MonoBehaviour
         {
 
             playerIsHere5 = true;
+        }
+        if (other.gameObject.CompareTag("ToMainToColony"))
+        {
+
+            playerIsHere6 = true;
+        }
+        if (other.gameObject.CompareTag("toColony"))
+        {
+
+            playerIsHere7 = true;
+        }
+        if (other.gameObject.CompareTag("toPuzzle4"))
+        {
+
+            playerIsHere8 = true;
+        }
+        if (other.gameObject.CompareTag("toExecutionRoom"))
+        {
+
+            playerIsHere9 = true;
         }
     }
 

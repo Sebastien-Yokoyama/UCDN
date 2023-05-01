@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainToColony.unity
     guid: 7a719eefa7d7f894cb043167a33a42ac
+  - enabled: 1
+    path: Assets/Scenes/Destroyed colony.unity
+    guid: e913f96207df5432a851125e832ac70c
+  - enabled: 1
+    path: Assets/Scenes/Puzzle 4.unity
+    guid: a5ae07b96f1024b2fa92281cf0218f9b
+  - enabled: 1
+    path: Assets/Scenes/Execution room.unity
+    guid: d557102889e29479a88f16e465e3cb73
   m_configObjects: {}

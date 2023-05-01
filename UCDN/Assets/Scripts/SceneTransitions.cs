@@ -7,6 +7,8 @@ public class SceneTransitions : MonoBehaviour
 {
     public GameObject toPuzzleRoomPanel = null;
 
+    private Vector3 spawnPosition; // the position where the player should respawn
+
     bool playerIsHere1;
     bool playerIsHere2;
 
@@ -24,12 +26,13 @@ public class SceneTransitions : MonoBehaviour
         
         if(playerIsHere1 && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("TestPuzzleRoom", LoadSceneMode.Additive);
+
         }
 
-        if(playerIsHere2 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere2 && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
 
@@ -38,6 +41,10 @@ public class SceneTransitions : MonoBehaviour
 
 
     }
+
+    
+
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -67,7 +74,7 @@ public class SceneTransitions : MonoBehaviour
         if (other.gameObject.CompareTag("ToMain"))
         {
 
-            playerIsHere2 = true;
+            playerIsHere2 = false;
         }
     }
 

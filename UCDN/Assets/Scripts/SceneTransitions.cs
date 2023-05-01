@@ -45,37 +45,37 @@ public class SceneTransitions : MonoBehaviour
 
         }
 
-        if (playerIsHere2 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere2 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("mainTo2");
         }
 
-        if (playerIsHere3 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere3 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("Puzzle 2");
         }
 
-        if (playerIsHere4 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere4 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("mainTo3");
         }
-        if (playerIsHere5 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere5 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("Puzzle 3");
         }
-        if (playerIsHere6 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere6 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("mainToColony");
         }
-        if (playerIsHere7 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere7 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("Destroyed colony");
         }
-        if (playerIsHere8 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere8 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("Puzzle 4");
         }
-        if (playerIsHere9 && Input.GetKeyDown(KeyCode.E))
+        if (playerIsHere9 /*&& Input.GetKeyDown(KeyCode.E)*/)
         {
             LoadSceneByName("Execution room");
         }
@@ -158,6 +158,41 @@ public class SceneTransitions : MonoBehaviour
         {
 
             playerIsHere2 = false;
+        }
+        if (other.gameObject.CompareTag("ToPuzzle2"))
+        {
+
+            playerIsHere3 = false;
+        }
+        if (other.gameObject.CompareTag("ToMainTo3"))
+        {
+
+            playerIsHere4 = false;
+        }
+        if (other.gameObject.CompareTag("ToPuzzle3"))
+        {
+
+            playerIsHere5 = false;
+        }
+        if (other.gameObject.CompareTag("ToMainToColony"))
+        {
+
+            playerIsHere6 = false;
+        }
+        if (other.gameObject.CompareTag("toColony"))
+        {
+
+            playerIsHere7 = false;
+        }
+        if (other.gameObject.CompareTag("toPuzzle4"))
+        {
+
+            playerIsHere8 = false;
+        }
+        if (other.gameObject.CompareTag("toExecutionRoom"))
+        {
+
+            playerIsHere9 = false;
         }
     }
 

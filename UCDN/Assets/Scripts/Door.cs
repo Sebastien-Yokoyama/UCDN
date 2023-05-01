@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private PickupMgr pickup_script;
+   // private PlayerMgr pickup_script;
 
     public GameObject keys;
     public GameObject movingDoor;
@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pickup_script = keys.GetComponent<PickupMgr>();
+       // pickup_script = keys.GetComponent<PlayerMgr>();
         playerIsHere = false;
        // opening = false;
         keyAvailable = false;
@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pickup_script.KeyAmount > 0)
+        if (PlayerMgr.inst.rustKeyCount > 0)
         {
             keyAvailable = true;
         }
@@ -50,7 +50,7 @@ public class Door : MonoBehaviour
             {
                 if ((Input.GetKeyDown(KeyCode.E)))
                 {
-                    pickup_script.KeyAmount--;
+                    PlayerMgr.inst.rustKeyCount--;
                     open = true;
                 }
             }

@@ -32,7 +32,7 @@ public class SceneTransitions : MonoBehaviour
         playerIsHere8 = false;
         playerIsHere9 = false;
 
-        toPuzzleRoomPanel.SetActive(false);
+        //toPuzzleRoomPanel.SetActive(false);
     }
 
     // Update is called once per frame

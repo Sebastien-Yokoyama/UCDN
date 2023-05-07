@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PuzzleRoom1 : MonoBehaviour
 {
+    public static PuzzleRoom1 inst;
+    private void Awake()
+    {
+        inst = this;
+    }
+
 
     public GameObject LeverPanel = null;
     public GameObject movingDoor;
@@ -11,6 +17,7 @@ public class PuzzleRoom1 : MonoBehaviour
     public GameObject pivotGreen;
     public GameObject pivotYellow;
     public GameObject pivotBlue;
+    public GameObject Gasper;
 
     bool RedHere;
     bool GreenHere;
@@ -20,13 +27,13 @@ public class PuzzleRoom1 : MonoBehaviour
     bool red;
     bool green;
     bool yellow;
-    bool blue;
+    public bool blue;
 
 
     void Start()
     {
         LeverPanel.SetActive(false);
-
+      //  objectToFade.SetActive(false);
         RedHere = false;
         GreenHere = false;
         YellowHere = false;
@@ -94,12 +101,21 @@ public class PuzzleRoom1 : MonoBehaviour
                 if (green)
                 {
                     if (blue)
-                    { 
-                      if (movingDoor.transform.position.y > -10)
-                      {
-                        movingDoor.transform.Translate(0f, -5f * Time.deltaTime, 0f);
-                      }
-                        
+                    {
+                        if (movingDoor.transform.position.y > -10)
+                        {
+                            movingDoor.transform.Translate(0f, -5f * Time.deltaTime, 0f);
+
+                        }
+
+                        if (Gasper.transform.position.y < 0)
+                        {
+                            Gasper.transform.Translate(0f, 5f * Time.deltaTime, 0f);
+                        }
+                       /* else
+                        { 
+                        Gasper.rb.isKinematic = false;
+                        }*/
                     }
                 }
                 else if (blue)
@@ -196,7 +212,58 @@ public class PuzzleRoom1 : MonoBehaviour
     }
 
 
+   /* public GameObject objectToFade;
 
+    // Declare a public float variable to hold the duration of the fade-in effect
+    public float fadeInDuration = 50.0f;
+
+    // Use this method to fade in the game object
+    public void FadeInGameObject()
+    {
+        StartCoroutine(FadeIn());
+    }
+
+    // Use this coroutine to gradually fade in the game object over time
+    private IEnumerator FadeIn()
+    {
+        objectToFade.SetActive(true);
+
+        MeshRenderer meshRenderer = objectToFade.GetComponent<MeshRenderer>();
+        if (meshRenderer == null)
+        {
+            Debug.LogWarning("FadeInObject script requires a MeshRenderer component on the object to fade in.");
+            yield break;
+        }
+
+        Material[] materials = meshRenderer.materials;
+        Color[] originalColors = new Color[materials.Length];
+
+        for (int i = 0; i < materials.Length; i++)
+        {
+            originalColors[i] = materials[i].color;
+            materials[i].color = new Color(originalColors[i].r, originalColors[i].g, originalColors[i].b, 0f);
+        }
+
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < fadeInDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / fadeInDuration);
+
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i].color = new Color(originalColors[i].r, originalColors[i].g, originalColors[i].b, t);
+            }
+
+            yield return null;
+        }
+
+        for (int i = 0; i < materials.Length; i++)
+        {
+            materials[i].color = originalColors[i];
+        }
+    }*/
 
 
 

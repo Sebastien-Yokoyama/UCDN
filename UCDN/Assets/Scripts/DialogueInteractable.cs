@@ -9,7 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour, iInteractable
+public class DialogueInteractable : MonoBehaviour, iInteractable
 {
     /*----- PROPERTIES -----*/
     [Header("Dialogue Attributes")]

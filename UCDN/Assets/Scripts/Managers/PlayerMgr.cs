@@ -152,6 +152,10 @@ public class PlayerMgr : MonoBehaviour
             out RaycastHit raycastHit, interactDistance, interactLayerMask))
         {
             Debug.Log(raycastHit.transform);
+            if(raycastHit.transform.TryGetComponent(out iInteractable interactable))
+            {
+                interactable.Interact();
+            }
         }
     }
 }

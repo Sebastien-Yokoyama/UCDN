@@ -594,6 +594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93237716}
+  - component: {fileID: 93237717}
   m_Layer: 6
   m_Name: Yellow Lever
   m_TagString: Untagged
@@ -618,6 +619,19 @@ Transform:
   m_Father: {fileID: 59891409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93237717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93237715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20603dbc2ee818a439c3476d825afc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
 --- !u!1 &93831997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2300,7 @@ GameObject:
   - component: {fileID: 462543732}
   - component: {fileID: 462543733}
   m_Layer: 6
-  m_Name: Body
+  m_Name: Green Body
   m_TagString: GreenLever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3519,7 +3533,7 @@ GameObject:
   - component: {fileID: 606793699}
   - component: {fileID: 606793700}
   m_Layer: 6
-  m_Name: Body
+  m_Name: Blue Body
   m_TagString: BlueLever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4809,6 +4823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 795975148}
+  - component: {fileID: 795975149}
   m_Layer: 6
   m_Name: Blue Lever
   m_TagString: BlueLever
@@ -4833,6 +4848,19 @@ Transform:
   m_Father: {fileID: 59891409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &795975149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795975147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20603dbc2ee818a439c3476d825afc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
 --- !u!4 &800632321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011207167760, guid: ff421997f346e314c82e73610f419ac1, type: 3}
@@ -7863,6 +7891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1669719726}
+  - component: {fileID: 1669719727}
   m_Layer: 6
   m_Name: Green Lever
   m_TagString: Untagged
@@ -7887,6 +7916,19 @@ Transform:
   m_Father: {fileID: 59891409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669719727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669719725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20603dbc2ee818a439c3476d825afc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
 --- !u!1001 &1670431708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10032,7 +10074,7 @@ GameObject:
   - component: {fileID: 1994062842}
   - component: {fileID: 1994062843}
   m_Layer: 6
-  m_Name: Body
+  m_Name: Yellow Body
   m_TagString: YellowLever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10914,6 +10956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1244273159707671457}
+  - component: {fileID: 1244273159707671458}
   m_Layer: 6
   m_Name: Red Lever
   m_TagString: Untagged
@@ -10954,6 +10997,19 @@ Transform:
   m_Father: {fileID: 59891409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244273159707671458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744698590938516049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20603dbc2ee818a439c3476d825afc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
 --- !u!1 &1663624545647247465
 GameObject:
   m_ObjectHideFlags: 0
@@ -10994,7 +11050,7 @@ GameObject:
   - component: {fileID: 8596517268454895044}
   - component: {fileID: 8596517268454895045}
   m_Layer: 6
-  m_Name: Body
+  m_Name: Red Body
   m_TagString: RedLever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

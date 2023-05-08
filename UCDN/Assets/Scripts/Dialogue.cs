@@ -30,6 +30,7 @@ public class Dialogue : MonoBehaviour, iInteractable
     // Update is called once per frame
     void Update()
     {
+        // Read Left-Click to proceed
         if (Input.GetMouseButtonDown(0))
         {
             if(UIMgr.inst.dialogueText.text == lines[index])
@@ -41,6 +42,12 @@ public class Dialogue : MonoBehaviour, iInteractable
                 StopAllCoroutines();
                 UIMgr.inst.dialogueText.text = lines[index];
             }
+        }
+
+        // Read Right-Click to exit
+        if (Input.GetMouseButtonDown(1))
+        {
+            UIMgr.inst.CloseDialogue();
         }
     }
 

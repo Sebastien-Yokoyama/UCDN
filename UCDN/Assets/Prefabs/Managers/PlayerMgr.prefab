@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2903741751776664919
 MonoBehaviour:
@@ -46,11 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
   playerRb: {fileID: 0}
+  orientation: {fileID: 0}
   playerHeight: 2
   isGrounded: 0
   movementSpeed: 7
   groundDrag: 5
-  moveDirection: {x: 0, y: 0, z: 0}
   jumpForce: 10
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  interactDistance: 3
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  objectGrabPointTransform: {fileID: 0}
+  objectGrabbable: {fileID: 0}
+  isHolding: 0
+  keyCount: 0
+  rustKeyCount: 0

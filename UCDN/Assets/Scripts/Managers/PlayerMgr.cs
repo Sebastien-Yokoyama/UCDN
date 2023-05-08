@@ -46,6 +46,10 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] float interactDistance = 3f;
     [SerializeField] LayerMask interactLayerMask;
 
+    public Transform objectGrabPointTransform;
+    public Grabbable objectGrabbable;
+    public bool isHolding;
+
     [Header("Inventory")]
     public int keyCount;
     public int rustKeyCount;
@@ -60,6 +64,9 @@ public class PlayerMgr : MonoBehaviour
 
         // Initialize ability to jump
         readyToJump = true;
+
+        // Initialize if carrying something
+        isHolding = false;
     }
 
     // Update is called once per frame
@@ -74,6 +81,9 @@ public class PlayerMgr : MonoBehaviour
         // Handle Drag
         if(isGrounded) { playerRb.drag = groundDrag; }
         else { playerRb.drag = 0f; }
+
+        // Check if holding something
+        isHolding = objectGrabbable;
     }
 
     // Update for physics calculations
@@ -149,14 +159,16 @@ public class PlayerMgr : MonoBehaviour
     public void Interact()
     {
         if(Physics.Raycast(CameraMgr.inst.playerCam.ViewportPointToRay(Vector3.one/2f),
-            out RaycastHit hit, interactDistance))
+            out RaycastHit hit, interactDistance) && !isHolding)
         {
-            iInteractable interactable = hit.collider.GetComponent<iInteractable>();
-
-            if(interactable != null)
+            if(hit.transform.TryGetComponent(out iInteractable interactable))
             {
                 interactable.Interact();
             }
+        }
+        else if(isHolding)
+        {
+            objectGrabbable.Drop();
         }
     }
 }

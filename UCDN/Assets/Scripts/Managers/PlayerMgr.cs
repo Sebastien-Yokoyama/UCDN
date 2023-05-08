@@ -42,6 +42,10 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] float airMultiplier;
     bool readyToJump;
 
+    [Header("Interaction Properties")]
+    [SerializeField] float interactDistance = 2f;
+    [SerializeField] LayerMask interactLayerMask;
+
     [Header("Inventory")]
     public int keyCount;
     public int rustKeyCount;
@@ -141,5 +145,13 @@ public class PlayerMgr : MonoBehaviour
         }
     }
 	
-
+    // Method that allows player to interact with objects
+    public void Interact()
+    {
+        if(Physics.Raycast(CameraMgr.inst.playerCam.transform.position, CameraMgr.inst.playerCam.transform.forward, 
+            out RaycastHit raycastHit, interactDistance, interactLayerMask))
+        {
+            Debug.Log(raycastHit.transform);
+        }
+    }
 }

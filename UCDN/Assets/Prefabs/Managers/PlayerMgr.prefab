@@ -49,8 +49,10 @@ MonoBehaviour:
   orientation: {fileID: 0}
   playerHeight: 2
   isGrounded: 0
-  movementSpeed: 7
+  walkSpeed: 7
+  runSpeed: 12
   groundDrag: 5
+  isRunning: 0
   jumpForce: 10
   jumpCooldown: 0.25
   airMultiplier: 0.4
@@ -61,5 +63,6 @@ MonoBehaviour:
   objectGrabPointTransform: {fileID: 0}
   objectGrabbable: {fileID: 0}
   isHolding: 0
+  isTalking: 0
   keyCount: 0
   rustKeyCount: 0

@@ -11,13 +11,16 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour, iInteractable
 {
+    /*----- PROPERTIES -----*/
     [Header("Dialogue Attributes")]
-    public List<string> lines;
+    public List<string> lines;  // Lines that will be said
 
-    [SerializeField] float textSpeed;
+    [SerializeField] float textSpeed;   // How fast each char is typed in seconds
 
-    int index;  // Keep track of conversation
+    int index;  // Keep track of conversation; keep track of line
 
+
+    /*----- METHODS -----*/
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,8 @@ public class Dialogue : MonoBehaviour, iInteractable
 
     void StartDialogue()
     {
+        StopAllCoroutines();    // Prevent funny text, if player spams 'E'
+
         UIMgr.inst.dialogueText.text = string.Empty;
         UIMgr.inst.OpenDialogue();
 

@@ -79,11 +79,15 @@ public class InputMgr : MonoBehaviour
         // Quit Game if ESC is pressed
         if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
 
+        // Read SHIFT for movement
+        if (Input.GetKey(KeyCode.LeftShift)) { PlayerMgr.inst.isRunning = true; }
+        else {  PlayerMgr.inst.isRunning = false; }
+
         // Read WASD for movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        // Read for jump
+        // Read SPACE for jump
         if (Input.GetKeyDown(KeyCode.Space)){ PlayerMgr.inst.DoJump(); }
 
         // Read Q for inventory & Make sure you're not in dialogue

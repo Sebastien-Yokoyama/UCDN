@@ -32,9 +32,12 @@ public class PlayerMgr : MonoBehaviour
     [SerializeField] bool isGrounded;
 
     [Header("Movement Properties")]
-    [SerializeField] float movementSpeed;
+    [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
     [SerializeField] float groundDrag;
     Vector3 moveDirection;
+
+    public bool isRunning;
 
     [Header("Jump Properties")]
     [SerializeField] float jumpForce;
@@ -66,6 +69,9 @@ public class PlayerMgr : MonoBehaviour
 
         // Initialize ability to jump
         readyToJump = true;
+
+        // Initialize running
+        isRunning = false;
 
         // Initialize if carrying something
         isHolding = false;
@@ -99,16 +105,19 @@ public class PlayerMgr : MonoBehaviour
     public void MovePlayer()
     {
         // Calculate movement direction
-        //moveDirection = playerObject.transform.forward * InputMgr.inst.verticalInput + playerObject.transform.right * InputMgr.inst.horizontalInput;
         moveDirection = orientation.forward * InputMgr.inst.verticalInput + orientation.right * InputMgr.inst.horizontalInput;
+
+        // Check if running or walking
+        var speed = isRunning ? runSpeed : walkSpeed;
+        Debug.Log("Speed: " + speed.ToString());
 
         if(isGrounded)
         {
-            playerRb.AddForce(moveDirection.normalized * movementSpeed * 10f, ForceMode.Force);
+            playerRb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
         }
         else
         {
-            playerRb.AddForce(moveDirection.normalized * movementSpeed * 10f * airMultiplier, ForceMode.Force);
+            playerRb.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
         }
     }
 
@@ -117,10 +126,13 @@ public class PlayerMgr : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(playerRb.velocity.x, 0f, playerRb.velocity.z);
 
+        // Check if running or walking
+        var speed = isRunning ? runSpeed : walkSpeed;
+
         // Limit Velocity
-        if(flatVel.magnitude > movementSpeed)
+        if(flatVel.magnitude > speed)
         {
-            Vector3 limitedVel = flatVel.normalized * movementSpeed;
+            Vector3 limitedVel = flatVel.normalized * speed;
             playerRb.velocity = new Vector3(limitedVel.x, playerRb.velocity.y, limitedVel.z);
         }
     }

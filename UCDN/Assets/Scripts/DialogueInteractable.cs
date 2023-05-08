@@ -9,7 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueInteractable : MonoBehaviour, iInteractable
+public class DialogueInteractable : MonoBehaviour
 {
     /*----- PROPERTIES -----*/
     [Header("Dialogue Attributes")]
@@ -89,4 +89,5 @@ public class DialogueInteractable : MonoBehaviour, iInteractable
             UIMgr.inst.CloseDialogue();
         }
     }
+
 }

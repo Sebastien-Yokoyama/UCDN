@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2336,17 +2336,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391805075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2759602, y: 2.2759602, z: 2.2759602}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 85059771}
-  m_Father: {fileID: 1067155643}
+  m_Father: {fileID: 1264230438}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 598.43, y: 217.27}
+  m_AnchoredPosition: {x: 402.16217, y: -33.684265}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391805077
@@ -4389,9 +4389,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5810949835044675808, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
+      propertyPath: m_text
+      value: "\u201CYou solved this puzzle but I already told you once please go
+        away, it is for your own sanity.\u201D"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2650305110420657372, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1374200838459697348, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 391805076}
   m_SourcePrefab: {fileID: 100100000, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
@@ -5959,11 +5964,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4731861580502952, guid: c590b17884b119046bc6412066500b7d, type: 3}
   m_PrefabInstance: {fileID: 1055135191}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1067155643 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2650305110420657372, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
-  m_PrefabInstance: {fileID: 702325268}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094270108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6578,6 +6578,11 @@ Transform:
   m_Father: {fileID: 93237716}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1264230438 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1374200838459697348, guid: dc1c3765596e6e6458b142787f828a0d, type: 3}
+  m_PrefabInstance: {fileID: 702325268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1272462290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011232769348, guid: 838aed2c0bd6e074383add6c6e347995, type: 3}
@@ -9703,6 +9708,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 702325276}
+--- !u!114 &1876165653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876165641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40541e45682e15d4f84caba4e31abf93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - "\u201CYou solved this puzzle but I already told you once please go away.\""
+  - "\"It is for your own sanity.\u201D"
+  textSpeed: 0.05
 --- !u!1 &1878390205
 GameObject:
   m_ObjectHideFlags: 0

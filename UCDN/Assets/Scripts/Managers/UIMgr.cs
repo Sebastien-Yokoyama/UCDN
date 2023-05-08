@@ -34,6 +34,7 @@ public class UIMgr : MonoBehaviour
     public TextMeshProUGUI rustKeyCount;
 
     [Header("Dialogue UI Elements")]
+    public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
 
 
@@ -41,10 +42,18 @@ public class UIMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Initialize key count
         SetKeyCount();
 
+        // Display key count
+        keyCountPanel.SetActive(true);
+
+        // Ensure inventory is closed
         inventoryOpen = false;
         inventoryPanel.SetActive(false);
+
+        // Ensure dialogue is closed
+        dialoguePanel.SetActive(false);
     }
 
     // Update is called once per frame

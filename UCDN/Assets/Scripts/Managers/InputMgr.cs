@@ -100,5 +100,11 @@ public class InputMgr : MonoBehaviour
                 UIMgr.inst.CloseInventory();
             }
         }
+
+        // Read E for interaction
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerMgr.inst.Interact();
+        }
     }
 }

@@ -6,6 +6,30 @@ TagManager:
   tags:
   - key1
   - PuzzleRoom1
+  - toPuzzle4
+  - SpawnPoint
+  - ToPuzzle2
+  - ToPuzzle3
+  - toColony
+  - ToMainTo3
+  - wolf
+  - bear
+  - deer
+  - ToMainToColony
+  - Room3Reset
+  - Room3Path3
+  - Room3Path6
+  - Room3Path5
+  - Room3Path4
+  - Room3Path7
+  - Room3Path1
+  - Room3Path2
+  - toExecutionRoom
+  - GreenLever
+  - BlueLever
+  - ToMain
+  - YellowLever
+  - RedLever
   layers:
   - Default
   - TransparentFX
@@ -13,7 +37,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Viewmodel
+  - Interactable
   - 
   - 
   - 

@@ -95,10 +95,14 @@ public class UIMgr : MonoBehaviour
     public void OpenDialogue()
     {
         dialoguePanel.SetActive(true);
+        
+        PlayerMgr.inst.isTalking = true;
     }
 
     public void CloseDialogue()
     {
         dialoguePanel.SetActive(false);
+
+        PlayerMgr.inst.isTalking = false;
     }
 }

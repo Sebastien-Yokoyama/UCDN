@@ -86,8 +86,8 @@ public class InputMgr : MonoBehaviour
         // Read for jump
         if (Input.GetKeyDown(KeyCode.Space)){ PlayerMgr.inst.DoJump(); }
 
-        // Read Q for inventory
-        if (Input.GetKeyDown(KeyCode.Q))
+        // Read Q for inventory & Make sure you're not in dialogue
+        if (Input.GetKeyDown(KeyCode.Q) && !PlayerMgr.inst.isTalking)
         {
             // If closed
             if (!UIMgr.inst.inventoryOpen)
@@ -101,8 +101,8 @@ public class InputMgr : MonoBehaviour
             }
         }
 
-        // Read E for interaction
-        if (Input.GetKeyDown(KeyCode.E))
+        // Read E for interaction & Make sure inventory is not open
+        if (Input.GetKeyDown(KeyCode.E) && !UIMgr.inst.inventoryOpen)
         {
             PlayerMgr.inst.Interact();
         }

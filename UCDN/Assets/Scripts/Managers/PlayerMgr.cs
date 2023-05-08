@@ -50,6 +50,8 @@ public class PlayerMgr : MonoBehaviour
     public Grabbable objectGrabbable;
     public bool isHolding;
 
+    public bool isTalking;
+
     [Header("Inventory")]
     public int keyCount;
     public int rustKeyCount;

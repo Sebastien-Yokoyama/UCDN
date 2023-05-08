@@ -33,6 +33,10 @@ public class UIMgr : MonoBehaviour
 
     public TextMeshProUGUI rustKeyCount;
 
+    [Header("Dialogue UI Elements")]
+    public TextMeshProUGUI dialogueText;
+
+
     /*----- METHDOS -----*/
     // Start is called before the first frame update
     void Start()

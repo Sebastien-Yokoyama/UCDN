@@ -14,7 +14,7 @@ public class Lever : MonoBehaviour, iInteractable
     /*----- PROPERTIES -----*/
     [SerializeField] GameObject pivot;
 
-    [SerializeField] bool activated;    // If lever is activated or not
+    public bool activated;    // If lever is activated or not
 
 
     /*----- METHODS -----*/

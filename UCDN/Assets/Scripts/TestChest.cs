@@ -30,4 +30,9 @@ public class TestChest : MonoBehaviour, iInteractable
     {
         messagePanel.SetActive(!messagePanel.activeSelf);
     }
+
+    void StartDialogue()
+    {
+
+    }
 }

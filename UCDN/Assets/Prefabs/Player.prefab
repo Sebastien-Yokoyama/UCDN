@@ -415,6 +415,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2650305110420657372}
     m_Modifications:
+    - target: {fileID: 3062656619269458203, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4132257551945247243, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -438,6 +442,14 @@ PrefabInstance:
     - target: {fileID: 6283684687215990385, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
       propertyPath: m_text
       value: Dialogue Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941561863068621133, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941561863068621133, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7268610945726647797, guid: 3023e809a4c85f641a924513efad0fa5, type: 3}
       propertyPath: m_AnchorMax.y

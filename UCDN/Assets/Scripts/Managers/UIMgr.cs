@@ -54,6 +54,8 @@ public class UIMgr : MonoBehaviour
 
         // Ensure dialogue is closed
         dialoguePanel.SetActive(false);
+        // Ensure dialogue text is empty
+        dialogueText.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -88,5 +90,15 @@ public class UIMgr : MonoBehaviour
     void SetRustKeyCount()
     {
         rustKeyCount.text = "x " + PlayerMgr.inst.rustKeyCount.ToString();
+    }
+
+    public void OpenDialogue()
+    {
+        dialoguePanel.SetActive(true);
+    }
+
+    public void CloseDialogue()
+    {
+        dialoguePanel.SetActive(false);
     }
 }

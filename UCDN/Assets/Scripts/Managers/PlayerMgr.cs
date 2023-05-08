@@ -43,7 +43,7 @@ public class PlayerMgr : MonoBehaviour
     bool readyToJump;
 
     [Header("Interaction Properties")]
-    [SerializeField] float interactDistance = 2f;
+    [SerializeField] float interactDistance = 3f;
     [SerializeField] LayerMask interactLayerMask;
 
     [Header("Inventory")]
@@ -148,11 +148,12 @@ public class PlayerMgr : MonoBehaviour
     // Method that allows player to interact with objects
     public void Interact()
     {
-        if(Physics.Raycast(CameraMgr.inst.playerCam.transform.position, CameraMgr.inst.playerCam.transform.forward, 
-            out RaycastHit raycastHit, interactDistance, interactLayerMask))
+        if(Physics.Raycast(CameraMgr.inst.playerCam.ViewportPointToRay(Vector3.one/2f),
+            out RaycastHit hit, interactDistance))
         {
-            Debug.Log(raycastHit.transform);
-            if(raycastHit.transform.TryGetComponent(out iInteractable interactable))
+            iInteractable interactable = hit.collider.GetComponent<iInteractable>();
+
+            if(interactable != null)
             {
                 interactable.Interact();
             }

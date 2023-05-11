@@ -57,22 +57,22 @@ public class EndGame : MonoBehaviour
         if (other.CompareTag("SaveSelf"))
         {
             endGameUI.SetActive(true);
-            if (Input.GetKeyDown(endGameKey))
-            {
-                // End game
-                Application.Quit();
-            }
+            //if (Input.GetKeyDown(endGameKey))
+            //{
+            //    // End game
+            //    Application.Quit();
+            //}
 
         }
         if (other.CompareTag("SaveAll"))
         {
 
             resetGameUI.SetActive(true);
-            if (Input.GetKeyDown(endGameKey))
-            {
-                // End game
-                SceneManager.LoadScene(0);
-            }
+            //if (Input.GetKeyDown(endGameKey))
+            //{
+            //    // End game
+            //    SceneManager.LoadScene(0);
+            //}
         }
 
     }

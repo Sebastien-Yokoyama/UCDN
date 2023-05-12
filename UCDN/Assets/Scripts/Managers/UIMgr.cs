@@ -22,9 +22,9 @@ public class UIMgr : MonoBehaviour
 
 
     /*----- PROPERTIES -----*/
-    [Header("Key Count UI Elements")]
-    public GameObject keyCountPanel;
-    public TextMeshProUGUI keyCount;
+  //  [Header("Key Count UI Elements")]
+   // public GameObject keyCountPanel;
+    //public TextMeshProUGUI keyCount;
 
     [Header("Inventory UI Elements")]
     public GameObject inventoryPanel;
@@ -46,7 +46,7 @@ public class UIMgr : MonoBehaviour
         SetKeyCount();
 
         // Display key count
-        keyCountPanel.SetActive(true);
+      //  keyCountPanel.SetActive(true);
 
         // Ensure inventory is closed
         inventoryOpen = false;
@@ -68,7 +68,7 @@ public class UIMgr : MonoBehaviour
 
     public void SetKeyCount()
     {
-        keyCount.text = "Keys: " + PlayerMgr.inst.keyCount.ToString();
+       // keyCount.text = "Keys: " + PlayerMgr.inst.keyCount.ToString();
     }
 
     public void OpenInventory()
@@ -76,7 +76,7 @@ public class UIMgr : MonoBehaviour
         inventoryOpen = true;
         inventoryPanel.SetActive(true);
 
-        keyCountPanel.gameObject.SetActive(false);
+       // keyCountPanel.gameObject.SetActive(false);
     }
 
     public void CloseInventory()
@@ -84,7 +84,7 @@ public class UIMgr : MonoBehaviour
         inventoryOpen = false;
         inventoryPanel.SetActive(false);
 
-        keyCountPanel.gameObject.SetActive(true);
+        //keyCountPanel.gameObject.SetActive(true);
     }
 
     void SetRustKeyCount()
